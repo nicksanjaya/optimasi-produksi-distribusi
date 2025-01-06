@@ -41,6 +41,7 @@ def convert_df(df):
             df[i] = df[i].astype(int)
             
     df = [col.replace(' ','_') for col in df]
+    return df
             
 #Margin
 def margin(df):
