@@ -67,6 +67,6 @@ if uploaded_file is not None:
     #Input Capacity
     capacity_1 = st.number_input("Kapasitas Pabrik 1:", min_value=0)
     capacity_2 = st.number_input("Kapasitas Pabrik 2:", min_value=0)
-    capacity_3 = st.number_input("Kapasitas Pabrik 1:", min_value=0)
+    capacity_3 = st.number_input("Kapasitas Pabrik 3:", min_value=0)
 
 
