@@ -50,10 +50,10 @@ uploaded_file = st.file_uploader("Upload Excel Master Data", type=["xlsx"])
 
 #Upload
 if uploaded_file is not None:
-    try:
-        df = pd.read_excel(uploaded_file)
-        df = preprocessing(df)
-        convert_df(df)
+    #try:
+    df = pd.read_excel(uploaded_file)
+    df = preprocessing(df)
+    convert_df(df)
     #except Exception as e:
         #st.error(f"Error reading the Excel file: {e}")
 
