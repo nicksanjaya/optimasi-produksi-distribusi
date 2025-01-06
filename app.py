@@ -55,6 +55,7 @@ if uploaded_file is not None:
         df = pd.read_excel(uploaded_file)
         df = preprocessing(df)
         convert_df(df)
+        st.write(df)
     except Exception as e:
         st.error(f"Error reading the Excel file: {e}")
 
