@@ -16,7 +16,7 @@ st.title('OPTIMASI PERENCANAAN PRODUKSI DAN DISTRIBUSI GLOBAL')
 def preprocessing(df):
     columns_to_impute = [col for col in df.columns if col != 'Produk']
     preprocessor = ColumnTransformer([
-        ('imputasi', SimpleImputer(strategy='costant', fill_value=0), columns_to_impute)],
+        ('imputasi', SimpleImputer(strategy='constant', fill_value=0), columns_to_impute)],
         remainder='passthrough',
         verbose_feature_names_out=False
     )
