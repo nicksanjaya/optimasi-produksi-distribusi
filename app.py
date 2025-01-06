@@ -58,7 +58,7 @@ if uploaded_file is not None:
     try:
         df = pd.read_excel(uploaded_file)
         df = preprocessing(df)
-        convert_df(df)
+        df = convert_df(df)
         #margin(df)
         st.write(df)
     except Exception as e:
