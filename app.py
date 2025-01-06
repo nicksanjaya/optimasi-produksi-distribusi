@@ -23,6 +23,9 @@ def preprocessing(df):
     preprocessor.fit(df)
     df = preprocessor.transform(df)
     df = pd.DataFrame(df, columns=preprocessor.get_feature_names_out())
+    cols = df.columns.tolist()
+    cols.insert(0, cols.pop(-1))
+    df = df[cols]
     return df
 
 #Converter
@@ -54,9 +57,6 @@ if uploaded_file is not None:
     try:
         df = pd.read_excel(uploaded_file)
         df = preprocessing(df)
-        cols = df.columns.tolist()
-        cols.insert(0, cols.pop(-1))
-        df = df[cols]
         convert_df(df)
         st.write(df)
     except Exception as e:
