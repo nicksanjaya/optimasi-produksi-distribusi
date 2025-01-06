@@ -43,5 +43,17 @@ def margin(df):
     df['Margin_1'] = ['Sales'] - ['Cost_Pabrik_1']
     df['Margin_2'] = ['Sales'] - ['Cost_Pabrik_2']
     df['Margin_3'] = ['Sales'] - ['Cost_Pabrik_3']
-    
+
+
+#Upload File 
+uploaded_file = st.file_uploader("Upload Excel Master Data", type=["xlsx"])
+
+#Upload
+if uploaded_file is not None:
+    try:
+        df = pd.read_excel(uploaded_file)
+        df = preprocessing(df)
+        convert_df(df)
+    except Exception as e:
+        st.error(f"Error reading the Excel file: {e}")
 
