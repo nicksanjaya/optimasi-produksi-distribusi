@@ -14,8 +14,9 @@ st.title('OPTIMASI PERENCANAAN PRODUKSI DAN DISTRIBUSI GLOBAL')
 
 #Imputasi
 def preprocessing(df):
+    columns_to_impute = [col for col in df.columns if col != 'Produk']
     preprocessor = ColumnTransformer([
-        ('imputasi', SimpleImputer(strategy='costant', fill_value=0), ['kolom'])],
+        ('imputasi', SimpleImputer(strategy='costant', fill_value=0), columns_to_impute)],
         remainder='passthrough',
         verbose_feature_names_out=False
     )
@@ -50,10 +51,10 @@ uploaded_file = st.file_uploader("Upload Excel Master Data", type=["xlsx"])
 
 #Upload
 if uploaded_file is not None:
-    #try:
-    df = pd.read_excel(uploaded_file)
-    df = preprocessing(df)
-    convert_df(df)
-    #except Exception as e:
-        #st.error(f"Error reading the Excel file: {e}")
+    try:
+        df = pd.read_excel(uploaded_file)
+        df = preprocessing(df)
+        convert_df(df)
+    except Exception as e:
+        st.error(f"Error reading the Excel file: {e}")
 
