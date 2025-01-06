@@ -40,7 +40,7 @@ def convert_df(df):
         if i != 'Produk':
             df[i] = df[i].astype(int)
             
-    df = [col.replace(' ','_') for col in df]
+    df.columns = [col.replace(' ','_') for col in df.columns]
     return df
             
 #Margin
