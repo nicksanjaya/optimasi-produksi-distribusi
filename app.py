@@ -44,9 +44,9 @@ def convert_df(df):
             
 #Margin
 def margin(df):
-    df['Margin_1'] = ['Sales'] - ['Cost_Pabrik_1']
-    df['Margin_2'] = ['Sales'] - ['Cost_Pabrik_2']
-    df['Margin_3'] = ['Sales'] - ['Cost_Pabrik_3']
+    df['Margin_1'] = df.['Sales'] - df.['Cost_Pabrik_1']
+    df['Margin_2'] = df.['Sales'] - df.['Cost_Pabrik_2']
+    df['Margin_3'] = df.['Sales'] - df.['Cost_Pabrik_3']
 
 
 #Upload File 
