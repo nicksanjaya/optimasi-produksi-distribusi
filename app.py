@@ -64,3 +64,9 @@ if uploaded_file is not None:
     except Exception as e:
         st.error(f"Error reading the Excel file: {e}")
 
+    #Input Capacity
+    capacity_1 = st.number_input("Kapasitas Pabrik 1:", min_value=0)
+    capacity_2 = st.number_input("Kapasitas Pabrik 2:", min_value=0)
+    capacity_3 = st.number_input("Kapasitas Pabrik 1:", min_value=0)
+
+
