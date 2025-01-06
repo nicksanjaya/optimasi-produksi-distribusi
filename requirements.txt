@@ -4,3 +4,5 @@ glpk
 numpy
 pandas
 openpyxl
+scikit-learn
+datetime
