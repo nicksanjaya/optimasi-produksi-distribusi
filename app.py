@@ -98,7 +98,7 @@ def optimization(df,capacity):
     for pabrik in range (3):
         st.write(f"<b><h3>Produksi Pabrik {pabrik+1}<b><h3>", unsafe_allow_html=True)
         for produk in range(len(df.Produk)):
-            st.write(f'<center><b><h3>Produk {df.Produk[produk]} = {pyo.value(pro[pabrik,produk]):,.0f} pcs</b></h3>', unsafe_allow_html=True)
+            st.write(f'<b><h3>Produk {df.Produk[produk]} = {pyo.value(pro[pabrik,produk]):,.0f} pcs</b></h3>', unsafe_allow_html=True)
         st.markdown('---'*10)
 
 #Upload File 
